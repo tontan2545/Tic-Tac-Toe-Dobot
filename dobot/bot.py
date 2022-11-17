@@ -61,7 +61,8 @@ class Bot:
     def __load_marker_position(self, marker: str) -> Optional[DobotPosition]:
         if (marker != "circle") and (marker != "cross") and (marker != "initial"):
             raise Exception(f'Marker must be either "circle" or "cross", got {marker}')
-        if os.path.isfile(marker_path := f"{os.path.abspath('dobot')}/positions/{marker}.p"):
+        marker_path = f"{os.path.abspath('dobot')}/positions/{marker}.p"
+        if os.path.isfile(marker_path):
             return pickle.load(open(marker_path, "rb"))
         print(f"WARNING: No marker position for {marker} found")
         return None
