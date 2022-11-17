@@ -1,0 +1,9 @@
+dobot/positions/*
+
+!.keep
+
+# pycharm metadata
+.idea
+
+# pycharm project settings
+*.iml
